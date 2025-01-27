@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1d1d1d;
+  color: #fff;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game-container {
+  text-align: center;
+  background: linear-gradient(45deg, #f39c12, #e74c3c);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.7);
+  width: 400px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.square:hover {
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.square.x {
+  color: #ff6347; /* Bright Tomato Red for X */
+  text-shadow: 0 0 20px #ff6347;
+}
+
+.square.o {
+  color: #32cd32; /* Lime Green for O */
+  text-shadow: 0 0 20px #32cd32;
+}
+
+/* Highlight winning squares */
+.square.winner {
+  background-color: rgba(255, 223, 0, 0.5); /* Bright Gold */
+  border-color: #ffd700;
+  box-shadow: 0 0 15px rgba(255, 223, 0, 0.9);
+}
+
+/* Glowing effect for the winner animation */
+@keyframes glowEffect {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Status and button styles */
+#status {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  background-color: #ff6347;
+  color: #fff;
+  border: 2px solid #ff6347;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 99, 71, 0.8);
+}
+
+button:hover {
+  background-color: #32cd32;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(50, 205, 50, 0.8);
+}
+
+button:active {
+  transform: scale(0.98);
+}
